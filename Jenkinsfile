@@ -5,14 +5,14 @@ pipeline {
         stage('Compil stage') {
             steps {
                 echo 'Compiling ...........'
-		withMaven(maven : 'Maven'){
+		withMaven(maven:'Maven'){
 		 sh 'mvn clean compile'}
             }
         }
         stage('Testing Stage') {
             steps {
                 echo 'Testing.. This is the testing phase'
-                withMaven (maven : 'Maven'){
+                withMaven (maven:'Maven'){
 		sh 'mvn test'
 		}
 	    }
@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy stage') {
             steps {
                 echo 'Deploying....  This is the deployment phase'
-                withMaven (maven : 'Maven'){
+                withMaven (maven:'Maven'){
 	          sh 'mvn deploy'}
 	     }
         }
